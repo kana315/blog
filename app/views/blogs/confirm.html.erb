@@ -4,9 +4,16 @@
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
   
-  <p>Title:<%= @blog.title %></p>
-  <p>Content:<%= @blog.content %></p>
-  <%= form.submit "投稿する" %>
+<article class="show_content">
+  <div>
+    <h4><%= @blog.title %></h4>
+  </div>
+  <div>
+  <p><%= @blog.content %></p>
+  </div>
+</article>
+  
+  <div class="form_submit"><%= form.submit "投稿する" %></div>
 <% end %>
 
 <%= form_with(model: @blog, url:new_blog_path, local:true, method:'get') do |form| %>

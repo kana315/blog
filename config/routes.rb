@@ -3,5 +3,8 @@ Rails.application.routes.draw do
     collection do
       post :confirm
     end
+    collection do
+      get :top
+    end
   end
 end

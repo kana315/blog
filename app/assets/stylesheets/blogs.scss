@@ -1,3 +1,140 @@
-// Place all the styles related to the blogs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  max-width:1000px;
+  margin:0 auto;
+}
+
+.content{
+  background-image:url("background-image.png");
+  padding:20px;
+  text-align:center;
+  padding-bottom:30px;
+  min-height:600px;
+  height:auto;
+}
+
+.blog-b {
+  color:#ffa500;
+}
+
+.home-h {
+  color:#ff69b4;
+}
+
+.new-n {
+  color:#0000ff;
+}
+
+.index-i {
+  color:#00ff00;
+}
+
+li {
+  list-style-position:inside;
+}
+
+.top_image{
+  width:100%;
+}
+
+.mini_image{
+  width:100%;
+}
+
+img.mini_image {display: none;}
+
+@media screen and (min-width:600px) {
+  img.mini_image {display: none;}
+  img.top_image {display: block;}
+}
+
+@media screen and (max-width:599px) {
+  img.mini_image {display: block;}
+  img.top_image {display: none;}
+}
+
+.top_area{
+  position:ralative;
+}
+
+.top_area p {
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+  font-weight:bold;
+  font-size:4rem;
+  color:#fff;
+}
+
+.form {
+  margin:0 auto;
+}
+
+.form th {
+  text-align:center;
+  padding:10px;
+}
+
+.form td {
+  text-align:left;
+}
+
+.form_submit {
+  margin:20px;
+}
+
+.form_text {
+  margin:20px;
+}
+
+.index_content {
+  background-color:#fff;
+  border:solid 1px;
+  border-color:#c0c0c0;
+  margin:0 auto;
+  padding:0;
+}
+
+.index_content a {
+  text-decoration: none;
+  color:#fff;
+}
+
+.index_content p {
+  padding:10px;
+  word-break: break-all;
+}
+
+.show_content p{
+  padding:10px;
+  word-break: break-all;
+}
+
+.show_content {
+  background-color:#fff;
+  border:solid 1px;
+  border-color:#c0c0c0;
+  margin:0 auto;
+  margin-bottom:20px;
+  max-width:700px;
+  padding:30px;
+}
+
+.footer {
+  height:30px;
+  border:1px solid ;
+  border-color:#c0c0c0;
+  border-radius:4px;
+  text-align:center;
+  color:#808080;
+  min-height:40px;
+  bottom:0;
+}
+
+.footer p {
+  padding:10px;
+}
