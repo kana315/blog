@@ -26,17 +26,31 @@
             <li><a href="/blogs/new"><span class="new-n">N</span>ew</a></li>
             <li><a href="/blogs"><span class="index-i">I</span>ndex</a></a></li>
           </ul>
-        </div>
-      </div>
+
+          <ul class="nav navbar-nav navbar-right">
+            <% if logged_in? %>
+              <li><%= link_to "Profile", user_path(current_user.id) %></li>
+              <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
+            <% else %>
+              <li><%= link_to "Sign up", new_user_path %></li>
+              <li><%= link_to "Login", new_session_path %></li>
+            <% end %>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- container-fluid -->
     </nav>
-    
+
+    <% flash.each do |key,value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
+
     <article class="content">
       <%= yield %>
     </article>
-    
+
     <footer class="footer">
       <p>Blog application</p>
     </footer>
-    
+
   </body>
 </html>

@@ -11,8 +11,7 @@
       </ul>
     </div>
   <% end %>
-  
- 
+
     <table class="form">
       <tr>
         <th><%= form.label :title %></th>
@@ -23,9 +22,9 @@
         <td class="form_text"><%= form.text_area :content, :size => "25*30" %></td>
       </tr>
     </table>
- 
+
   <div class="form_submit">
-    <%= form.submit "投稿" %>
+    <%= form.submit "投稿", :class => "submit" %>
   </div>
 <% end %>
 

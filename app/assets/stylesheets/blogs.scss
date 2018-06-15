@@ -75,7 +75,7 @@ img.mini_image {display: none;}
 }
 
 .form th {
-  text-align:center;
+  text-align:right;
   padding:10px;
 }
 
@@ -84,11 +84,19 @@ img.mini_image {display: none;}
 }
 
 .form_submit {
-  margin:20px;
+  margin:15px;
 }
 
 .form_text {
   margin:20px;
+}
+
+.submit {
+  padding:7px;
+  background-color: #fff;
+  color: #2c2c2c;
+  border: solid 1px #c0c0c0;
+  border-radius: 4px;
 }
 
 .index_content {
