@@ -1,5 +1,5 @@
 Rails.application.configure do
-  
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -46,6 +46,6 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_option = { host: 'glacial-springs-92379.herokuapp.com'}
+  config.action_mailer.default_url_options = { host: 'glacial-springs-92379.herokuapp.com'}
   config.action_mailer.delivery_method = :letter_opener_web
 end
