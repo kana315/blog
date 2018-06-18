@@ -1,7 +1,6 @@
 class BlogsController < ApplicationController
   before_action :no_logged_in, only: [:new, :show, :edit, :destroy]
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-  #before_action :author?, only: [:edit, :destroy]
 
   def index
     @blogs = Blog.all
@@ -67,16 +66,10 @@ class BlogsController < ApplicationController
     @current_user ||= User.find_by(id: session[:user_id])
   end
 
-  #def author?
-    #unless current_user.id == @blog.user_id
-      #redirect_to blogs_path
-    #end
-  #end
-
   def no_logged_in
     unless current_user.present?
       redirect_to new_session_path
-    end
+
   end
 
 end
