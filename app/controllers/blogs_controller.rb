@@ -69,7 +69,7 @@ class BlogsController < ApplicationController
   def no_logged_in
     unless current_user.present?
       redirect_to new_session_path
-
+    end
   end
 
 end
