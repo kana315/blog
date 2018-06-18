@@ -9,4 +9,16 @@
   </div>
 </article>
 
+<% unless @blog.user == current_user %>
+  <% if @favorite.present? %>
+    <%= link_to 'お気に入り解除する',
+        favorite_path(id: @favorite.id),
+        method: :delete, class: 'btn btn-danger' %>
+  <% else %>
+    <%= link_to 'お気に入りする',
+        favorites_path(blog_id: @blog.id),
+        method: :post, class: 'btn btn-primary' %>
+  <% end %>
+<% end %>
+
 <%= link_to 'ブログ一覧', blogs_path %>

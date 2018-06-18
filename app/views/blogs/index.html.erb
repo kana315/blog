@@ -2,19 +2,21 @@
 <h2>ブログ一覧</h2>
 <p><%= notice %></p>
 
-<div class="container index_content">
+<div class="container index_container">
 <% @blogs.each do |blog| %>
-  <div class="row">
+  <div class="row index_content">
     <h4 class="col-md-3 col-xs-12"><%= blog.title %></h4>
     <p class="col-md-3 col-xs-12"><%= blog.content %></p>
     <div class="col-md-6">
       <%= link_to '詳細を見る', blog_path(blog.id), class:'btn btn-warning' %>
-      <%= link_to 'ブログを編集', edit_blog_path(blog.id), class:'btn btn-success' %>
-      <%= link_to 'ブログを削除', blog_path(blog.id), 
-          method: :delete, data: {confirm: '本当に削除していいですか？'}, 
+
+      <% if current_user.id == blog.user_id %>
+        <%= link_to 'ブログを編集', edit_blog_path(blog.id), class:'btn btn-success' %>
+        <%= link_to 'ブログを削除', blog_path(blog.id),
+          method: :delete, data: {confirm: '本当に削除していいですか？'},
           class:'btn btn-primary' %>
+      <% end %>
     </div>
   </div>
 <% end %>
-
 </div>
