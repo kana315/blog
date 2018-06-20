@@ -21,6 +21,13 @@
         <th><%= form.label :content %></th>
         <td class="form_text"><%= form.text_area :content, :size => "25*30" %></td>
       </tr>
+      <tr>
+        <th><%= form.label :image %></th>
+        <td class="form_text">
+          <%= image_tag(@blog.image.url) if @blog.image.url %>
+          <%= form.file_field :image, id: :blog_image %>
+          <%= form.hidden_field :image_cache %></td>
+      </tr>
     </table>
 
   <div class="form_submit">

@@ -1,9 +1,10 @@
 <h2>確認画面</h2>
 
-<%= form_with(model:@blog, url:blogs_path, local:true) do |form| %>
+<%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
-  
+  <%= hidden_field_tag :"cache[image]",@blog.image.cache_name %>
+
 <article class="show_content">
   <div>
     <h4><%= @blog.title %></h4>
@@ -11,13 +12,17 @@
   <div>
   <p><%= @blog.content %></p>
   </div>
+  <div>
+    <p><%= image_tag(@blog.image) %>
+  </div>
 </article>
-  
+
   <div class="form_submit"><%= form.submit "投稿する" %></div>
 <% end %>
 
 <%= form_with(model: @blog, url:new_blog_path, local:true, method:'get') do |form| %>
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
+  <%= hidden_field_tag :"cache[image]",@blog.image.cache_name %>
   <%= form.submit "戻る", name:'back' %>
 <% end %>

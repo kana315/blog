@@ -1,6 +1,16 @@
 <h1><%= @user.name %>さんのページ</h1>
 
-<p>メールアドレス:<%= @user.email %></p>
+<p>
+  <%= image_tag @user.icon %>
+</p>
+
+<% if logged_in? %>
+  <% if current_user.id == @user.id %>
+    <p>メールアドレス:<%= @user.email %></p>
+
+    <p><%= link_to 'プロフィール編集', edit_user_path %></p>
+  <% end %>
+<% end %>
 
 <h2>お気に入り一覧：</h2>
 <div class="container index_container">

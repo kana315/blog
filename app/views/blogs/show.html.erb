@@ -7,6 +7,9 @@
   <div>
   <p><%= @blog.content %></p>
   </div>
+  <div>
+    <p><%= image_tag @blog.image %></p>
+  </div>
 </article>
 
 <% unless @blog.user == current_user %>
